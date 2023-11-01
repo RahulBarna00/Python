@@ -1,0 +1,81 @@
+#2. Write a menu driven Python program to check if number and string palindrome
+
+#CODE
+def is_palindrome(number):
+    reversed_number = 0
+    original_number = number
+    while number > 0:
+        reversed_number = reversed_number * 10 + number % 10
+        number //= 10
+    return original_number == reversed_number
+
+def is_palindrome_string(string):
+    reversed_string = ''
+    for i in range(len(string) - 1, -1, -1):
+        reversed_string += string[i]
+    return string == reversed_string
+
+def factorial(number):
+    factorial = 1
+    for i in range(1, number + 1):
+        factorial *= i
+    return factorial
+
+def main():
+    print("Welcome to the menu-driven program!")
+    print("1. Check if the number is palindrome")
+    print("2. Check if the string is palindrome")
+    print("3. Find factorial of the number")
+    print("4. Quit")
+
+    choice = int(input("Enter your choice: "))
+
+    while choice != 4:
+        if choice == 1:
+            number = int(input("Enter a number: "))
+            if is_palindrome(number):
+                print("The number is palindrome!")
+            else:
+                print("The number is not palindrome!")
+        elif choice == 2:
+            string = input("Enter a string: ")
+            if is_palindrome_string(string):
+                print("The string is a palindrome!")
+            else:
+                print("The string is not a palindrome!")
+        elif choice == 3:
+            number = int(input("Enter a number: "))
+            if number < 0:
+                print("Factorial does not exist for negative numbers")
+            elif number == 0:
+                print("The factorial of 0 is 1")
+            else:
+                print("The factorial of the number is", factorial(number))
+        else:
+            print("Invalid choice!")
+
+        choice = int(input("Enter your choice: "))
+
+if __name__ == "__main__":
+    main()
+
+
+
+
+
+#OUTPUT:
+
+Welcome to the menu-driven program!
+1. Check if the number is palindrome
+2. Check if the string is palindrome
+3. Find factorial of the number
+4. Quit
+Enter your choice: 1
+Enter a number: 121
+The number is palindrome!
+Enter your choice: 2
+Enter a string: madam
+The string is a palindrome!
+Enter your choice: 3
+Enter a number: 5
+The factorial of the number is 120

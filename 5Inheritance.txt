@@ -1,0 +1,36 @@
+#5. Write a python program to demonstrate inheritance in Python
+
+#CODE
+# Parent class
+class Animal:
+    def __init__(self, name):
+        self.name = name
+
+    def make_sound(self):
+        pass  # Placeholder for the sound method
+
+# Child class inheriting from Animal
+class Dog(Animal):
+    def make_sound(self):
+        return "Woof!"
+
+# Another child class inheriting from Animal
+class Cat(Animal):
+    def make_sound(self):
+        return "Meow!"
+
+# Creating instances of the child classes
+dog = Dog("Buddy")
+cat = Cat("Whiskers")
+
+# Using inherited methods
+print(f"{dog.name} says: {dog.make_sound()}")
+print(f"{cat.name} says: {cat.make_sound()}")
+
+
+
+
+
+#OUTPUT:
+Buddy says: Woof!
+Whiskers says: Meow!

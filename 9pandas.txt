@@ -1,0 +1,59 @@
+#9 Write a python program to demonstrate Data Series and Data Frames using Pandas(any example)
+
+#CODE
+import pandas as pd
+
+# Creating a data series
+data_series = pd.Series([10, 20, 30, 40, 50])
+print("Data Series:")
+print(data_series)
+
+# Creating a data frame
+data = {'Name': ['Alice', 'Bob', 'Charlie', 'David', 'Eve'],
+        'Age': [25, 30, 35, 28, 22],
+        'City': ['New York', 'Los Angeles', 'Chicago', 'Houston', 'San Francisco']}
+data_frame = pd.DataFrame(data)
+print("\nData Frame:")
+print(data_frame)
+
+# Accessing specific columns in the data frame
+names = data_frame['Name']
+ages = data_frame['Age']
+print("\nNames:")
+print(names)
+print("\nAges:")
+print(ages)
+
+
+#OUTPUT:
+Data Series:
+0    10
+1    20
+2    30
+3    40
+4    50
+dtype: int64
+
+Data Frame:
+      Name  Age           City
+0    Alice   25       New York
+1      Bob   30    Los Angeles
+2  Charlie   35        Chicago
+3    David   28        Houston
+4      Eve   22  San Francisco
+
+Names:
+0      Alice
+1        Bob
+2    Charlie
+3      David
+4        Eve
+Name: Name, dtype: object
+
+Ages:
+0    25
+1    30
+2    35
+3    28
+4    22
+Name: Age, dtype: int64

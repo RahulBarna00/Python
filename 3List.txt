@@ -1,0 +1,165 @@
+#3. Write a menu driven program to demonstrate use of list in python.
+a.	Put even and odd elements into two different lists.
+b.	Merge and sort the two list.
+c.	Update first element with X value and delete the middle element of list.
+d.	Find max and min element from the list.
+e.	Add N names into the existing number list and check if word python is present     in list.
+
+
+#CODE
+def split_even_odd(numbers):
+    even_list = []
+    odd_list = []
+
+    for num in numbers:
+        if num % 2 == 0:
+            even_list.append(num)
+        else:
+            odd_list.append(num)
+
+    return even_list, odd_list
+
+def merge_sort_lists(list1, list2):
+    merged_list = list1 + list2
+    merged_list.sort()
+    return merged_list
+
+def update_delete_list(numbers, x_value):
+    if numbers:
+        numbers[0] = x_value
+        middle_index = len(numbers) // 2
+        del numbers[middle_index]
+    else:
+        print("The list is empty.")
+
+def find_max_min(numbers):
+    max_value = max(numbers)
+    min_value = min(numbers)
+    return max_value, min_value
+
+def check_python_in_list(names_list):
+    return 'python' in names_list
+
+def main():
+    numbers = []
+    names_list = []
+
+    while True:
+        print("Menu:")
+        print("1. Add numbers to the list")
+        print("2. Split even and odd numbers into different lists")
+        print("3. Merge and sort the two lists")
+        print("4. Update first element with X value and delete the middle element of the list")
+        print("5. Find max and min elements from the list")
+        print("6. Add names to the existing number list and check if 'python' is present")
+        print("7. Exit")
+
+        choice = int(input("Enter your choice (1-7): "))
+
+        if choice == 1:
+            num = int(input("Enter a number to add to the list: "))
+            numbers.append(num)
+        elif choice == 2:
+            even_list, odd_list = split_even_odd(numbers)
+            print("Even elements:", even_list)
+            print("Odd elements:", odd_list)
+        elif choice == 3:
+            merged_sorted_list = merge_sort_lists(even_list, odd_list)
+            print("Merged and sorted list:", merged_sorted_list)
+        elif choice == 4:
+            x_value = int(input("Enter the value to update the first element with: "))
+            update_delete_list(numbers, x_value)
+            print("Updated list:", numbers)
+        elif choice == 5:
+            max_value, min_value = find_max_min(numbers)
+            print("Max element:", max_value)
+            print("Min element:", min_value)
+        elif choice == 6:
+            num_names = int(input("Enter the number of names you want to add: "))
+            for _ in range(num_names):
+                name = input("Enter a name: ")
+                names_list.append(name)
+            print("Updated names list:", names_list)
+            if check_python_in_list(names_list):
+                print("The word 'python' is present in the names list.")
+            else:
+                print("The word 'python' is not present in the name list.")
+        elif choice == 7:
+            print("Exiting...")
+            break
+        else:
+            print("Invalid choice. Please enter a valid option")
+
+if __name__ == "__main__":
+    main()
+
+
+
+
+#OUTPUT:
+Menu:
+1. Add numbers to the list
+2. Split even and odd numbers into different lists
+3. Merge and sort the two lists
+4. Update first element with X value and delete the middle element of the list
+5. Find max and min elements from the list
+6. Add names to the existing number list and check if 'python' is present
+7. Exit
+Enter your choice (1-7): 1
+Enter a number to add to the list: 4
+
+Menu:
+1. Add numbers to the list
+2. Split even and odd numbers into different lists
+3. Merge and sort the two lists
+4. Update first element with X value and delete the middle element of the list
+5. Find max and min elements from the list
+6. Add names to the existing number list and check if 'python' is present
+7. Exit
+Enter your choice (1-7): 1
+Enter a number to add to the list: 5
+
+Menu:
+1. Add numbers to the list
+2. Split even and odd numbers into different lists
+3. Merge and sort the two lists
+4. Update first element with X value and delete the middle element of the list
+5. Find max and min elements from the list
+6. Add names to the existing number list and check if 'python' is present
+7. Exit
+Enter your choice (1-7): 1
+Enter a number to add to the list: 6
+
+Menu:
+1. Add numbers to the list
+2. Split even and odd numbers into different lists
+3. Merge and sort the two lists
+4. Update first element with X value and delete the middle element of the list
+5. Find max and min elements from the list
+6. Add names to the existing number list and check if 'python' is present
+7. Exit
+Enter your choice (1-7): 1
+Enter a number to add to the list: 7
+
+Menu:
+1. Add numbers to the list
+2. Split even and odd numbers into different lists
+3. Merge and sort the two lists
+4. Update first element with X value and delete the middle element of the list
+5. Find max and min elements from the list
+6. Add names to the existing number list and check if 'python' is present
+7. Exit
+Enter your choice (1-7): 2
+Even elements: [4, 6]
+Odd elements: [5, 7]
+
+Menu:
+1. Add numbers to the list
+2. Split even and odd numbers into different lists
+3. Merge and sort the two lists
+4. Update first element with X value and delete the middle element of the list
+5. Find max and min elements from the list
+6. Add names to the existing number list and check if 'python' is present
+7. Exit
+Enter your choice (1-7): 3
+Merged and sorted list: [4, 5, 6, 7]

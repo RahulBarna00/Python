@@ -1,0 +1,44 @@
+#6. Write a program to demonstrate exception handling in Python
+
+#CODE
+def divide_numbers(a, b):
+    try:
+        result = a / b
+        return result
+    except ZeroDivisionError:
+        return "Division by zero is not allowed."
+    except TypeError:
+        return "Please provide valid numeric values."
+try:
+    num1 = float(input("Enter the numerator: "))
+    num2 = float(input("Enter the denominator: "))
+    result = divide_numbers(num1, num2)
+    print(f"Result: {result}")
+except ValueError:
+    print("Invalid input. Please enter numeric values.")
+except Exception as e:
+    print(f"An error occurred: {e}")
+
+
+
+
+#OUTPUT:
+Valid Input (e.g., dividing 10 by 2):
+
+Enter the numerator: 10
+Enter the denominator: 2
+Result: 5.0
+Division by Zero:
+
+Enter the numerator: 5
+Enter the denominator: 0
+Result: Division by zero is not allowed.
+Invalid Input (e.g., entering a non-numeric value):
+
+Enter the numerator: abc
+Invalid input. Please enter numeric values.
+Unexpected Error (e.g., any other error not specifically caught):
+
+Enter the numerator: 10
+Enter the denominator: '2'
+An error occurred: unsupported operand type(s) for /: 'int' and 'str'

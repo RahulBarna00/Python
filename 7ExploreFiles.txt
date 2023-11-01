@@ -1,0 +1,66 @@
+#7. Implement Python programs to explore files and directories.
+a. Python program to count number of lines, words, and characters in a file.
+b. Python program to display files available in the current directory
+
+
+#CODE
+import os
+
+def count_file_stats(file_path):
+    try:
+        with open(file_path, 'r') as file:
+            text = file.read()
+            lines = text.split('\n')
+            words = text.split()
+            num_lines = len(lines)
+            num_words = len(words)
+            num_chars = len(text)
+
+            print(f"Number of lines: {num_lines}")
+            print(f"Number of words: {num_words}")
+            print(f"Number of characters: {num_chars}")
+    except FileNotFoundError:
+        print("File not found.")
+
+def list_files_in_directory():
+    current_directory = os.getcwd()
+    files = os.listdir(current_directory)
+
+    print(f"Files available in the current directory ({current_directory}):")
+    for file in files:
+        if os.path.isfile(file):
+            print(file)
+
+if __name__ == "__main__":
+    choice = input("Enter '1' to count file stats or '2' to list files in the current directory: ")
+
+    if choice == '1':
+        file_path = input("Enter the path of the file: ")
+        count_file_stats(file_path)
+    elif choice == '2':
+        list_files_in_directory()
+    else:
+        print("Invalid choice. Please enter '1' or '2' to choose the operation.")
+
+
+
+
+
+#OUTPUT:
+Enter '1' to count file stats or '2' to list files in the current directory: 1
+Enter the path of the file: c:\Users\saksh\OneDrive\Desktop\Sakshi\SBL-PYTHON CODES\7ExploreFiles.py
+Number of lines: 38
+Number of words: 120
+Number of characters: 1187
+
+Enter '1' to count file stats or '2' to list files in the current directory: 2
+Files available in the current directory (C:\Users\saksh\OneDrive\Desktop\Sakshi\SBL-PYTHON CODES):
+1Swapping.py
+2Palindrome.py
+3List.py
+4DemonstrateClass.py
+5Inheritance.py
+6ExceptionHandling.py
+7ExploreFiles.py
+8GUI.py
+9DataSeriesFrames.py

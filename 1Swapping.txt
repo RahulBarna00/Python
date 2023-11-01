@@ -1,0 +1,41 @@
+#Write a Python program to swap two numbers and check if the first number is positive negative or zero.
+
+#CODE
+num1 = int(input("Enter the first number: "))
+num2 = int(input("Enter the second number: "))
+
+temp = num1
+num1 = num2
+num2 = temp
+
+print("After swapping, the first number is:", num1)
+print("After swapping, the second number is:", num2)
+
+if num1 > 0:
+    print("The first number is positive.")
+elif num1 < 0:
+    print("The first number is negative.")
+else:
+    print("The first number is zero.")
+
+
+
+
+#OUTPUT
+Enter the first number: 5
+Enter the second number: 6
+After swapping, the first number is: 6
+After swapping, the second number is: 5
+The first number is positive.
+
+Enter the first number: 56
+Enter the second number: -42
+After swapping, the first number is: -42
+After swapping, the second number is: 56
+The first number is negative.
+
+Enter the first number: 66
+Enter the second number: 0
+After swapping, the first number is: 0
+After swapping, the second number is: 66
+The first number is zero.
